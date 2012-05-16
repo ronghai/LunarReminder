@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		95E41A5215633CFB00DDB69C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E41A5115633CFB00DDB69C /* UIKit.framework */; };
+		95E41A5415633CFB00DDB69C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E41A5315633CFB00DDB69C /* Foundation.framework */; };
+		95E41A5615633CFB00DDB69C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E41A5515633CFB00DDB69C /* CoreGraphics.framework */; };
+		95E41A5C15633CFB00DDB69C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95E41A5A15633CFB00DDB69C /* InfoPlist.strings */; };
+		95E41A5E15633CFB00DDB69C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E41A5D15633CFB00DDB69C /* main.m */; };
+		95E41A6215633CFB00DDB69C /* LunarReminderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E41A6115633CFB00DDB69C /* LunarReminderAppDelegate.m */; };
+		95E41A6515633CFB00DDB69C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E41A6315633CFB00DDB69C /* MainStoryboard.storyboard */; };
+		95E41A6815633CFB00DDB69C /* LunarReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E41A6715633CFB00DDB69C /* LunarReminderViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		95E41A4D15633CFB00DDB69C /* LunarReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunarReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95E41A5115633CFB00DDB69C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		95E41A5315633CFB00DDB69C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		95E41A5515633CFB00DDB69C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		95E41A5915633CFB00DDB69C /* LunarReminder-Info.plist */ = {isa = PBXFileReference; path = "LunarReminder-Info.plist"; sourceTree = "<group>"; };
+		95E41A5B15633CFB00DDB69C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95E41A5D15633CFB00DDB69C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95E41A5F15633CFB00DDB69C /* LunarReminder-Prefix.pch */ = {isa = PBXFileReference; path = "LunarReminder-Prefix.pch"; sourceTree = "<group>"; };
+		95E41A6015633CFB00DDB69C /* LunarReminderAppDelegate.h */ = {isa = PBXFileReference; path = LunarReminderAppDelegate.h; sourceTree = "<group>"; };
+		95E41A6115633CFB00DDB69C /* LunarReminderAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunarReminderAppDelegate.m; sourceTree = "<group>"; };
+		95E41A6415633CFB00DDB69C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		95E41A6615633CFB00DDB69C /* LunarReminderViewController.h */ = {isa = PBXFileReference; path = LunarReminderViewController.h; sourceTree = "<group>"; };
+		95E41A6715633CFB00DDB69C /* LunarReminderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunarReminderViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95E41A4A15633CFB00DDB69C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E41A5215633CFB00DDB69C /* UIKit.framework in Frameworks */,
+				95E41A5415633CFB00DDB69C /* Foundation.framework in Frameworks */,
+				95E41A5615633CFB00DDB69C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		95E41A4215633CFB00DDB69C = {
+			isa = PBXGroup;
+			children = (
+				95E41A5715633CFB00DDB69C /* LunarReminder */,
+				95E41A5015633CFB00DDB69C /* Frameworks */,
+				95E41A4E15633CFB00DDB69C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95E41A4E15633CFB00DDB69C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95E41A4D15633CFB00DDB69C /* LunarReminder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95E41A5015633CFB00DDB69C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95E41A5115633CFB00DDB69C /* UIKit.framework */,
+				95E41A5315633CFB00DDB69C /* Foundation.framework */,
+				95E41A5515633CFB00DDB69C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95E41A5715633CFB00DDB69C /* LunarReminder */ = {
+			isa = PBXGroup;
+			children = (
+				95E41A6015633CFB00DDB69C /* LunarReminderAppDelegate.h */,
+				95E41A6115633CFB00DDB69C /* LunarReminderAppDelegate.m */,
+				95E41A6315633CFB00DDB69C /* MainStoryboard.storyboard */,
+				95E41A6615633CFB00DDB69C /* LunarReminderViewController.h */,
+				95E41A6715633CFB00DDB69C /* LunarReminderViewController.m */,
+				95E41A5815633CFB00DDB69C /* Supporting Files */,
+			);
+			path = LunarReminder;
+			sourceTree = "<group>";
+		};
+		95E41A5815633CFB00DDB69C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95E41A5915633CFB00DDB69C /* LunarReminder-Info.plist */,
+				95E41A5A15633CFB00DDB69C /* InfoPlist.strings */,
+				95E41A5D15633CFB00DDB69C /* main.m */,
+				95E41A5F15633CFB00DDB69C /* LunarReminder-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95E41A4C15633CFB00DDB69C /* LunarReminder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95E41A6B15633CFB00DDB69C /* Build configuration list for PBXNativeTarget "LunarReminder" */;
+			buildPhases = (
+				95E41A4915633CFB00DDB69C /* Sources */,
+				95E41A4A15633CFB00DDB69C /* Frameworks */,
+				95E41A4B15633CFB00DDB69C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LunarReminder;
+			productName = LunarReminder;
+			productReference = 95E41A4D15633CFB00DDB69C /* LunarReminder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95E41A4415633CFB00DDB69C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LunarReminder;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = ronghai.me;
+			};
+			buildConfigurationList = 95E41A4715633CFB00DDB69C /* Build configuration list for PBXProject "LunarReminder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 95E41A4215633CFB00DDB69C;
+			productRefGroup = 95E41A4E15633CFB00DDB69C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95E41A4C15633CFB00DDB69C /* LunarReminder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95E41A4B15633CFB00DDB69C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E41A5C15633CFB00DDB69C /* InfoPlist.strings in Resources */,
+				95E41A6515633CFB00DDB69C /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95E41A4915633CFB00DDB69C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E41A5E15633CFB00DDB69C /* main.m in Sources */,
+				95E41A6215633CFB00DDB69C /* LunarReminderAppDelegate.m in Sources */,
+				95E41A6815633CFB00DDB69C /* LunarReminderViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		95E41A5A15633CFB00DDB69C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95E41A5B15633CFB00DDB69C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		95E41A6315633CFB00DDB69C /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95E41A6415633CFB00DDB69C /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95E41A6915633CFB00DDB69C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		95E41A6A15633CFB00DDB69C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95E41A6C15633CFB00DDB69C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LunarReminder/LunarReminder-Prefix.pch";
+				INFOPLIST_FILE = "LunarReminder/LunarReminder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		95E41A6D15633CFB00DDB69C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LunarReminder/LunarReminder-Prefix.pch";
+				INFOPLIST_FILE = "LunarReminder/LunarReminder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95E41A4715633CFB00DDB69C /* Build configuration list for PBXProject "LunarReminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95E41A6915633CFB00DDB69C /* Debug */,
+				95E41A6A15633CFB00DDB69C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95E41A6B15633CFB00DDB69C /* Build configuration list for PBXNativeTarget "LunarReminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95E41A6C15633CFB00DDB69C /* Debug */,
+				95E41A6D15633CFB00DDB69C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95E41A4415633CFB00DDB69C /* Project object */;
+}
