@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LunarReminderViewController : UIViewController
+@interface LunarReminderViewController : UITableViewController
 
 @end
