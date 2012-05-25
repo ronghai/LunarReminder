@@ -2,73 +2,115 @@
 //  LunarDatePickerViewController.m
 //  LunarReminder
 //
-//  Created by 韦 荣海 on 12-5-17.
+//  Created by 韦 荣海 on 12-5-20.
 //  Copyright (c) 2012年 ronghai.me. All rights reserved.
 //
 
 #import "LunarDatePickerViewController.h"
-
-@interface LunarDatePickerViewController()<UIPickerViewDelegate, UIPickerViewDataSource> 
-@property (weak, nonatomic) IBOutlet UIPickerView *datePicker;
-
+#import "LunarDatePicker.h"
+#import "LunarDate.h"
+@interface LunarDatePickerViewController () <LunarDatePickerViewDelegate>
+@property (weak, nonatomic) IBOutlet LunarDatePicker *lunarDatePicker;
+@property (weak, nonatomic) IBOutlet UILabel *cellLabel;
+ 
 @end
 
 @implementation LunarDatePickerViewController
+@synthesize lunarDatePicker = _lunarDatePicker;
+@synthesize cellLabel = _cellLabel;
+@synthesize delegate = _delegate;
+@synthesize lunarDate = _lunarDate;
+@synthesize showsDoneButton = _showsDoneButton;
+@synthesize showsCancelButton = _showsCancelButton;
 
-@synthesize datePicker = _datePicker;
-
-#pragma mark UIPickerViewDataSource
-// returns the number of 'columns' to display. 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 3;
-}
-
-// returns the # of rows in each component..
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return 4;
-}
-
-#pragma mark UIPickerViewDelegate
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    return  [NSString stringWithFormat:@"%d : %d", row,component ];
-}
-
-
-#pragma mark view cycle
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+ 
+#pragma mark LunarDatePickerViewDelegate
+- (void) lunarDatePickerDidChange:(LunarDatePicker *)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self setup];
-        // Custom initialization
+    [self setLunarDate:sender.lunarDate];
+    [self.delegate lunarDatePickerDidChange:self];
+}
+
+- (void) setLunarDate:(LunarDate *)lunarDate
+{
+    if(lunarDate != _lunarDate){ 
+        _lunarDate = lunarDate;
+        self.cellLabel.text = [lunarDate lunarDescription];
+    }
+}
+
+#
+
+- (void) done
+{ 	
+    [self.delegate lunarDatePickerDidFinish:self];
+}
+
+- (void) cancel
+{ 	
+    [self.delegate lunarDatePickerDidCancel:self];
+}
+
+
+
+#pragma mark setup
+
+- (void) setup
+{
+    self.cellLabel.text = [_lunarDate lunarDescription]; 
+    self.lunarDatePicker.datePickerViewDelegate = self; 
+    self.lunarDatePicker.lunarDate = _lunarDate;
+
+    
+ 	if(_showsDoneButton){
+		UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone  
+                                                                                     target:self  
+                                                                                     action:@selector(done) ];
+		doneButton.style = UIBarButtonItemStyleDone;
+        self.navigationItem.rightBarButtonItem = doneButton;
+	
+    }
+	
+	if(_showsCancelButton){
+		UIBarButtonItem * cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
+                                                                                       target:self  
+                                                                                       action:@selector(cancel) ];
+		cancelButton.style = UIBarButtonItemStyleDone; 
+        self.navigationItem.leftBarButtonItem = cancelButton;
+	} 
+	
+
+}
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {        
     }
     return self;
 }
 
-- (void)setup
-{
-   //self.view set
-}
+
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [super viewDidLoad]; 
     [self setup];
-	// Do any additional setup after loading the view.
+
 }
 
 - (void)viewDidUnload
 {
-    [self setDatePicker:nil];
+    [self setLunarDatePicker:nil];
+    [self setCellLabel:nil];
+    [self setDelegate:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+ 
 
 @end
