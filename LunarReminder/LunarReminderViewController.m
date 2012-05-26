@@ -10,8 +10,9 @@
 
 #import "LunarDate.h"
 #import "LunarDatePickerViewController.h"
-#import <EventKit/EventKit.h>
-#import <EventKitUI/EventKitUI.h>
+
+#import "LunarEventsTableViewController.h"
+#define kProgressIndicatorSize 20.0
 
 @interface LunarReminderViewController ()<LunarDatePickerControllerDelegate,EKCalendarChooserDelegate,UITextFieldDelegate>
  
@@ -20,11 +21,12 @@
 @property (weak, nonatomic) IBOutlet UISwitch *repeat;
 @property (weak, nonatomic) IBOutlet UITextView *memo;
 
-@property (strong, nonatomic) LunarDate * lunarDate;
-@property (strong, nonatomic) EKCalendar *calender;
-@property (strong, nonatomic) EKEventStore *eventStore;
+
 @property (weak, nonatomic) IBOutlet UILabel *lunarDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *calenderLabel;
+
+@property (strong, nonatomic) LunarDate * lunarDate;
+@property (strong, nonatomic) EKCalendar *calender;
 
 @end
 
@@ -38,6 +40,7 @@
 @synthesize eventStore = _eventStore;
 @synthesize lunarDateLabel = _lunarDateLabel;
 @synthesize calenderLabel = _calenderLabel;
+@synthesize delegate = _delegate;
  
 + (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] ;
@@ -112,7 +115,10 @@
         [segue.destinationViewController setShowsDoneButton:TRUE];
         [segue.destinationViewController setDelegate:self];  
         [segue.destinationViewController setLunarDate:_lunarDate];
-    } 
+    }
+          //
+        //
+    
 }
  
 - (void) setLunarDate:(LunarDate *)lunarDate
@@ -134,28 +140,16 @@
     }
 }
 
+  
  
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.eventStore = [[EKEventStore alloc] init]; 
     self.calender = [self.eventStore defaultCalendarForNewEvents];
-	self.lunarDate = [LunarDate today];
-    [self.eventTitle becomeFirstResponder];
+	self.lunarDate = [LunarDate lunarDateWithDate: [NSDate date]];
     self.location.delegate = self;
     self.eventTitle.delegate = self;
-    
-   // self.navigationItem.rightBarButtonItem 
-   // self.eventTitle.
-   // [self.location becomeFirstResponder];
-    //.nextResponder = self.location;
-    //[self.eventTitle set
-        // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   
 }
 
 - (void)viewDidUnload
@@ -165,43 +159,52 @@
     [self setLocation:nil];
     [self setRepeat:nil];
     [self setMemo:nil];
-    [self setLunarDate:nil];
-    [self setCalender:nil];
-    [self setEventStore:nil];
+    
     [self setLunarDateLabel:nil];
     [self setCalenderLabel:nil];
+    
+    [self setLunarDate:nil];
+    [self setCalender:nil];
+     
     [super viewDidUnload];
     
-    //NSLog(@"test");
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-- (IBAction)changeEventTitle:(id)sender {
+- (IBAction)changeEventTitle:(id)sender 
+{
     self.navigationItem.rightBarButtonItem.enabled = TRUE;
 }
 
-- (IBAction)addEvent:(id)sender {
-    //TEST
-    /*
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+
+
+
+
+- (IBAction)addEvent:(id)sender 
+{
+    
+   
+         /*
+    UIActivityIndicatorView *spinner =
     spinner.hidesWhenStopped = TRUE;
     [self.view addSubview:spinner]; 
      
     [spinner startAnimating];
     */
     
-    NSInteger lastYear = MAX_LUNAR_YEAR;
-    if(self.repeat.state != UIControlStateSelected){
+    NSInteger lastYear = MAX_LUNAR_YEAR;//MAX_LUNAR_YEAR;
+    if(!self.repeat.on){
         lastYear = self.lunarDate.lunarYear;
     }
-    
+
+     
+    NSMutableArray *eventIds = [NSMutableArray arrayWithCapacity:(lastYear - self.lunarDate.lunarYear + 1)];
     NSError *err;
     for(int lunarYear = self.lunarDate.lunarYear ;lunarYear <= lastYear  ;lunarYear++){
+
         NSMutableString * string = [NSMutableString stringWithCapacity:20];          
         [string appendString:self.memo.text];
         
@@ -230,16 +233,29 @@
         [string appendFormat:@" \n%@",[ld lunarDescription]];
         event.notes = string ; //TODO notes
 
-        
-        [self.eventStore saveEvent:event span:EKSpanThisEvent error:&err];  
+        if([self.eventStore saveEvent:event span:EKSpanThisEvent error:&err]){
+            [eventIds addObject:event.eventIdentifier];
+        }else{
+            
+
+        }
         
     } 
-    [self.eventStore commit:&err];
-   // [spinner stopAnimating];
- }
+    if([self.eventStore commit:&err]){
+        [self.delegate save:self withEvents:eventIds];
+      /*  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"SaveSuccessful", @"")
+                                              message:nil
+                                              delegate:nil 
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                              otherButtonTitles:nil];
+        [alert show];*/
+    } 
+
+}
 
 
--(BOOL)textFieldShouldReturn:(UITextField *)sender {
+-(BOOL)textFieldShouldReturn:(UITextField *)sender 
+{
     if( sender == self.eventTitle){
         [self.location becomeFirstResponder];
     }else  if( sender == self.location){
@@ -248,7 +264,18 @@
     return YES;
 
 }
+
  
+- (IBAction)cancel:(id)sender {
+    [self.delegate cancel:self];
+}
+
+-(IBAction)backgroundTouched:(id)sender
+{
+    [self.location resignFirstResponder];
+    [self.eventTitle resignFirstResponder];
+    [self.memo resignFirstResponder];
+}
  
  
 

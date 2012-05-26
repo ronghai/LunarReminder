@@ -27,11 +27,10 @@
 + (NSString *) monthDescription:(NSInteger) month;
 + (NSString *) monthDescription:(NSInteger) monthOffset withYear:(NSInteger) year;
 + (NSString *) yearDescription:(NSInteger) year isFullLabel:(BOOL) fullLabel;
-+ (LunarDate *) today;
 + (id) lunarDateWithLunarYear:(NSInteger)iYear lunarMonth:(NSInteger)iMonth andLunarDay:(NSInteger)iDay;
 
 + (NSInteger) lunarMonthDaysWith: (NSInteger) iYear month:(NSInteger) iMonth;
-
++ (LunarDate *) lunarDateWithDate:(NSDate *)curentDate;
 - (id) initWithSolar:(NSInteger)iYear month:(NSInteger)iMonth day:(NSInteger)iDay;
 - (id) initWithLunar:(NSInteger)iYear month:(NSInteger)iMonth day:(NSInteger)iDay;
 - (NSString *) lunarDescription;

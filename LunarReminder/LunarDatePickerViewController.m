@@ -101,9 +101,7 @@
 
 - (void)viewDidUnload
 {
-    [self setLunarDatePicker:nil];
     [self setCellLabel:nil];
-    [self setDelegate:nil];
     [super viewDidUnload];
 }
 

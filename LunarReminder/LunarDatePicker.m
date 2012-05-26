@@ -57,6 +57,8 @@
     }   
     [self selectRow:lunarMonth inComponent:LUNAR_MONTH_INDEX animated:FALSE]; 
     [self selectRow:(lunarDay - 1) inComponent:LUNAR_DAY_INDEX animated:FALSE];
+    [self reloadAllComponents];
+
 }
 
 

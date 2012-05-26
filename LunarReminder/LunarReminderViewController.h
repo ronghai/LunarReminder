@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
- 
+#import <EventKit/EventKit.h>
+#import <EventKitUI/EventKitUI.h>
+@class LunarReminderViewController;
+
+@protocol LunarReminderLunarReminderViewControllerDelegate <NSObject>
+
+- (void) save:(LunarReminderViewController *) controller withEvents:(NSMutableArray *)events;
+- (void) cancel:(LunarReminderViewController *) controller;
+
+@end
 
 @interface LunarReminderViewController : UITableViewController
 
+
+@property (nonatomic, weak) IBOutlet id<LunarReminderLunarReminderViewControllerDelegate> delegate;
+@property (strong, nonatomic) EKEventStore *eventStore;
 
 @end

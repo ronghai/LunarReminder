@@ -352,18 +352,21 @@ static NSString * const EarthlyBranches[] = {@"子", @"丑", @"寅", @"卯", @"�
     return self;
 }
 
-+ (LunarDate *) today
-{
-    
-    return [[LunarDate alloc]initWithSolar:2012 month:4 day:23];
-   //   return [[LunarDate alloc]initWithLunar:2012 month:3 day:2];
-}
+
 
 
 - (NSString *) lunarDescription
 {
     return [NSString stringWithFormat:@"%@%@%@",[LunarDate yearDescription:[self lunarYear] isFullLabel:TRUE], 
             [LunarDate monthDescription:[self lunarMonth]],[LunarDate dayDescription:[self lunarDay]]];
+}
+
+
++ (LunarDate *) lunarDateWithDate:(NSDate *)curentDate{
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* compo = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:curentDate]; // Get necessary date components
+    return [[LunarDate alloc]initWithSolar:[compo year] month:[compo month] day:[compo day]];
+    
 }
 
 @end

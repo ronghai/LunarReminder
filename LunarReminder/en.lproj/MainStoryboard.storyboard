@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="pZi-dv-HD3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="DFS-Wr-TMB">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
@@ -98,7 +98,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nwq-wW-obj">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" id="nwq-wW-obj">
                                                     <rect key="frame" x="226" y="11" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -165,6 +165,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="添加事件" id="2K4-z7-WAN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fbq-BT-6bj">
+                            <connections>
+                                <action selector="cancel:" destination="5gP-1N-C9d" id="rXC-rY-s7M"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="yfl-j2-HlV">
                             <connections>
                                 <action selector="addEvent:" destination="5gP-1N-C9d" id="M9B-f1-DXT"/>
@@ -181,7 +186,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="608" y="43"/>
+            <point key="canvasLocation" x="1428" y="58"/>
         </scene>
         <!--Lunar Date Picker View Controller-->
         <scene sceneID="W6g-VF-uKW">
@@ -232,7 +237,59 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1054" y="127"/>
+            <point key="canvasLocation" x="1788" y="94"/>
+        </scene>
+        <!--Lunar Events Table View Controller - 农历提醒-->
+        <scene sceneID="cc2-FK-36Z">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYx-Ep-hN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="6yg-hf-uJY" customClass="LunarEventsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="u4a-ux-Qst">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="event cell" textLabel="8YR-7q-rF6" detailTextLabel="rbZ-TW-i0z" style="IBUITableViewCellStyleSubtitle" id="6hW-yy-Scy">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8YR-7q-rF6">
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rbZ-TW-i0z">
+                                            <rect key="frame" x="10" y="24" width="36" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6yg-hf-uJY" id="klS-zc-f2S"/>
+                            <outlet property="delegate" destination="6yg-hf-uJY" id="355-GR-q4A"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="农历提醒" id="dCb-Oh-0XT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="C7u-N3-BBl">
+                            <connections>
+                                <segue destination="pZi-dv-HD3" kind="modal" identifier="show add event table view" modalTransitionStyle="coverVertical" id="NLI-Nc-LEq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="589" y="58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KtZ-sj-x0f">
@@ -250,7 +307,25 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="247" y="90"/>
+            <point key="canvasLocation" x="1015" y="40"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GCn-3d-bWp">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dtV-28-H0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="DFS-Wr-TMB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="AYt-a6-woc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6yg-hf-uJY" kind="relationship" relationship="rootViewController" id="gbT-h8-D4d"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="109" y="46"/>
         </scene>
     </scenes>
     <classes>
@@ -268,10 +343,14 @@
                 <relationship kind="outlet" name="lunarDatePicker" candidateClass="LunarDatePicker"/>
             </relationships>
         </class>
+        <class className="LunarEventsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LunarEventsTableViewController.h"/>
+        </class>
         <class className="LunarReminderViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LunarReminderViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="calenderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="delegate"/>
                 <relationship kind="outlet" name="eventTitle" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="location" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="lunarDateLabel" candidateClass="UILabel"/>

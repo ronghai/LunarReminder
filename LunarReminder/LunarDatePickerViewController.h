@@ -21,8 +21,8 @@
 
 @interface LunarDatePickerViewController : UITableViewController
 
-@property (nonatomic, assign) IBOutlet id<LunarDatePickerControllerDelegate> delegate;
-@property (nonatomic, copy) LunarDate *lunarDate;
+@property (nonatomic, weak) IBOutlet id<LunarDatePickerControllerDelegate> delegate;
+@property (nonatomic, strong) LunarDate *lunarDate;
 @property (nonatomic) BOOL showsDoneButton;
 @property (nonatomic) BOOL showsCancelButton;
 
