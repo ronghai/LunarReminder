@@ -273,7 +273,9 @@ static NSString * const EarthlyBranches[] = {@"子", @"丑", @"寅", @"卯", @"�
             iSDay = iOffsetDays + 1;
             iOffsetDays -= [LunarDate dayInMonth:iSMonth withYear:iSYear];
         }
-        iSMonth--;         
+        iSMonth--;  
+        NSLog(@"init with Lunar ");
+
         self =  [self initWithSolarYear:iSYear solarMonth:iSMonth solarDay:iSDay lunarYear:iYear lunarMonth:iMonth lunarDay:iDay];          
     }
     
@@ -295,8 +297,7 @@ static NSString * const EarthlyBranches[] = {@"子", @"丑", @"寅", @"卯", @"�
         _solarYear = iYear;
         _solarMonth = iMonth;
         _solarDay = iDay;
-       // NSLog(@"%d-%d-%d-%d-%d-%d", _solarYear, _solarMonth, _solarDay, _lunarYear ,_lunarMonth,_lunarDay );
-
+        NSLog(@"公历 %d-%d-%d 农历 %d-%d-%d", _solarYear, _solarMonth, _solarDay, _lunarYear ,_lunarMonth,_lunarDay );
     }
 
     return self;
@@ -344,6 +345,7 @@ static NSString * const EarthlyBranches[] = {@"子", @"丑", @"寅", @"卯", @"�
             iLMonth--;
         }
 
+        NSLog(@"init with solar ");
       self =  [self initWithSolarYear:iYear solarMonth:iMonth solarDay:iDay lunarYear:iLYear lunarMonth:iLMonth lunarDay:iLDay];         
         
         //[NSString stringWithFormat: ];

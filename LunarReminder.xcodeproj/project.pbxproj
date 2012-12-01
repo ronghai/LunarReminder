@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951A8B101569D4B2008A4CC4 /* LunarDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951A8B0F1569D4B2008A4CC4 /* LunarDatePickerViewController.m */; };
+		951A8B1515700B4D008A4CC4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951A8B1315700B4D008A4CC4 /* EventKit.framework */; };
+		951A8B1615700B4D008A4CC4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951A8B1415700B4D008A4CC4 /* EventKitUI.framework */; };
+		959A36BE157056D700FED3FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 959A36C0157056D700FED3FC /* Localizable.strings */; };
+		959A36C4157059FA00FED3FC /* LunarEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959A36C3157059F900FED3FC /* LunarEventsTableViewController.m */; };
 		95E41A5215633CFB00DDB69C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E41A5115633CFB00DDB69C /* UIKit.framework */; };
 		95E41A5415633CFB00DDB69C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E41A5315633CFB00DDB69C /* Foundation.framework */; };
 		95E41A5615633CFB00DDB69C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E41A5515633CFB00DDB69C /* CoreGraphics.framework */; };
@@ -14,23 +19,39 @@
 		95E41A5E15633CFB00DDB69C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E41A5D15633CFB00DDB69C /* main.m */; };
 		95E41A6215633CFB00DDB69C /* LunarReminderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E41A6115633CFB00DDB69C /* LunarReminderAppDelegate.m */; };
 		95E41A6515633CFB00DDB69C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E41A6315633CFB00DDB69C /* MainStoryboard.storyboard */; };
-		95E41A6815633CFB00DDB69C /* LunarReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E41A6715633CFB00DDB69C /* LunarReminderViewController.m */; };
+		95E41A7015633DA800DDB69C /* LunarReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E41A6F15633DA800DDB69C /* LunarReminderViewController.m */; };
+		95E41AB915670F7000DDB69C /* LunarDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E41AB815670F7000DDB69C /* LunarDate.m */; };
+		95E41ABC15670F9800DDB69C /* LunarDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E41ABB15670F9800DDB69C /* LunarDatePicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		951A8B0E1569D4B2008A4CC4 /* LunarDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarDatePickerViewController.h; sourceTree = "<group>"; };
+		951A8B0F1569D4B2008A4CC4 /* LunarDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarDatePickerViewController.m; sourceTree = "<group>"; };
+		951A8B1115700AEE008A4CC4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		951A8B1315700B4D008A4CC4 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		951A8B1415700B4D008A4CC4 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		959A36BB157054F100FED3FC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		959A36BF157056D700FED3FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		959A36C1157056E300FED3FC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		959A36C2157059F900FED3FC /* LunarEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarEventsTableViewController.h; sourceTree = "<group>"; };
+		959A36C3157059F900FED3FC /* LunarEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarEventsTableViewController.m; sourceTree = "<group>"; };
 		95E41A4D15633CFB00DDB69C /* LunarReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunarReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E41A5115633CFB00DDB69C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95E41A5315633CFB00DDB69C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		95E41A5515633CFB00DDB69C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		95E41A5915633CFB00DDB69C /* LunarReminder-Info.plist */ = {isa = PBXFileReference; path = "LunarReminder-Info.plist"; sourceTree = "<group>"; };
+		95E41A5915633CFB00DDB69C /* LunarReminder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LunarReminder-Info.plist"; sourceTree = "<group>"; };
 		95E41A5B15633CFB00DDB69C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95E41A5D15633CFB00DDB69C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		95E41A5F15633CFB00DDB69C /* LunarReminder-Prefix.pch */ = {isa = PBXFileReference; path = "LunarReminder-Prefix.pch"; sourceTree = "<group>"; };
-		95E41A6015633CFB00DDB69C /* LunarReminderAppDelegate.h */ = {isa = PBXFileReference; path = LunarReminderAppDelegate.h; sourceTree = "<group>"; };
+		95E41A5F15633CFB00DDB69C /* LunarReminder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LunarReminder-Prefix.pch"; sourceTree = "<group>"; };
+		95E41A6015633CFB00DDB69C /* LunarReminderAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LunarReminderAppDelegate.h; sourceTree = "<group>"; };
 		95E41A6115633CFB00DDB69C /* LunarReminderAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunarReminderAppDelegate.m; sourceTree = "<group>"; };
 		95E41A6415633CFB00DDB69C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		95E41A6615633CFB00DDB69C /* LunarReminderViewController.h */ = {isa = PBXFileReference; path = LunarReminderViewController.h; sourceTree = "<group>"; };
-		95E41A6715633CFB00DDB69C /* LunarReminderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunarReminderViewController.m; sourceTree = "<group>"; };
+		95E41A6E15633DA800DDB69C /* LunarReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarReminderViewController.h; sourceTree = "<group>"; };
+		95E41A6F15633DA800DDB69C /* LunarReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarReminderViewController.m; sourceTree = "<group>"; };
+		95E41AB715670F7000DDB69C /* LunarDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarDate.h; sourceTree = "<group>"; };
+		95E41AB815670F7000DDB69C /* LunarDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarDate.m; sourceTree = "<group>"; };
+		95E41ABA15670F9800DDB69C /* LunarDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarDatePicker.h; sourceTree = "<group>"; };
+		95E41ABB15670F9800DDB69C /* LunarDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarDatePicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951A8B1515700B4D008A4CC4 /* EventKit.framework in Frameworks */,
+				951A8B1615700B4D008A4CC4 /* EventKitUI.framework in Frameworks */,
 				95E41A5215633CFB00DDB69C /* UIKit.framework in Frameworks */,
 				95E41A5415633CFB00DDB69C /* Foundation.framework in Frameworks */,
 				95E41A5615633CFB00DDB69C /* CoreGraphics.framework in Frameworks */,
@@ -50,6 +73,9 @@
 		95E41A4215633CFB00DDB69C = {
 			isa = PBXGroup;
 			children = (
+				951A8B1315700B4D008A4CC4 /* EventKit.framework */,
+				951A8B1415700B4D008A4CC4 /* EventKitUI.framework */,
+				951A8B1115700AEE008A4CC4 /* StoreKit.framework */,
 				95E41A5715633CFB00DDB69C /* LunarReminder */,
 				95E41A5015633CFB00DDB69C /* Frameworks */,
 				95E41A4E15633CFB00DDB69C /* Products */,
@@ -77,11 +103,14 @@
 		95E41A5715633CFB00DDB69C /* LunarReminder */ = {
 			isa = PBXGroup;
 			children = (
+				95E41A7A1565E03900DDB69C /* LunarDate */,
 				95E41A6015633CFB00DDB69C /* LunarReminderAppDelegate.h */,
 				95E41A6115633CFB00DDB69C /* LunarReminderAppDelegate.m */,
 				95E41A6315633CFB00DDB69C /* MainStoryboard.storyboard */,
-				95E41A6615633CFB00DDB69C /* LunarReminderViewController.h */,
-				95E41A6715633CFB00DDB69C /* LunarReminderViewController.m */,
+				959A36C2157059F900FED3FC /* LunarEventsTableViewController.h */,
+				959A36C3157059F900FED3FC /* LunarEventsTableViewController.m */,
+				95E41A6E15633DA800DDB69C /* LunarReminderViewController.h */,
+				95E41A6F15633DA800DDB69C /* LunarReminderViewController.m */,
 				95E41A5815633CFB00DDB69C /* Supporting Files */,
 			);
 			path = LunarReminder;
@@ -92,10 +121,24 @@
 			children = (
 				95E41A5915633CFB00DDB69C /* LunarReminder-Info.plist */,
 				95E41A5A15633CFB00DDB69C /* InfoPlist.strings */,
+				959A36C0157056D700FED3FC /* Localizable.strings */,
 				95E41A5D15633CFB00DDB69C /* main.m */,
 				95E41A5F15633CFB00DDB69C /* LunarReminder-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95E41A7A1565E03900DDB69C /* LunarDate */ = {
+			isa = PBXGroup;
+			children = (
+				951A8B0E1569D4B2008A4CC4 /* LunarDatePickerViewController.h */,
+				951A8B0F1569D4B2008A4CC4 /* LunarDatePickerViewController.m */,
+				95E41AB715670F7000DDB69C /* LunarDate.h */,
+				95E41AB815670F7000DDB69C /* LunarDate.m */,
+				95E41ABA15670F9800DDB69C /* LunarDatePicker.h */,
+				95E41ABB15670F9800DDB69C /* LunarDatePicker.m */,
+			);
+			name = LunarDate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +177,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 95E41A4215633CFB00DDB69C;
 			productRefGroup = 95E41A4E15633CFB00DDB69C /* Products */;
@@ -152,6 +196,7 @@
 			files = (
 				95E41A5C15633CFB00DDB69C /* InfoPlist.strings in Resources */,
 				95E41A6515633CFB00DDB69C /* MainStoryboard.storyboard in Resources */,
+				959A36BE157056D700FED3FC /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,17 +209,31 @@
 			files = (
 				95E41A5E15633CFB00DDB69C /* main.m in Sources */,
 				95E41A6215633CFB00DDB69C /* LunarReminderAppDelegate.m in Sources */,
-				95E41A6815633CFB00DDB69C /* LunarReminderViewController.m in Sources */,
+				95E41A7015633DA800DDB69C /* LunarReminderViewController.m in Sources */,
+				95E41AB915670F7000DDB69C /* LunarDate.m in Sources */,
+				95E41ABC15670F9800DDB69C /* LunarDatePicker.m in Sources */,
+				951A8B101569D4B2008A4CC4 /* LunarDatePickerViewController.m in Sources */,
+				959A36C4157059FA00FED3FC /* LunarEventsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		959A36C0157056D700FED3FC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				959A36BF157056D700FED3FC /* en */,
+				959A36C1157056E300FED3FC /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		95E41A5A15633CFB00DDB69C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				95E41A5B15633CFB00DDB69C /* en */,
+				959A36BB157054F100FED3FC /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -276,6 +335,7 @@
 				95E41A6D15633CFB00DDB69C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
